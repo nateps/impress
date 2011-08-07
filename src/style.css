@@ -22,11 +22,44 @@ a {
 
 text-back = #fff
 back = #fff
+
 lum = 100 / lightness(back)
-highlight = rgba(lighten(back, 25%),.6 / lum)
+lum-light = lum * .25
+lum-med = lum * .35
+lum-dark = lum * .45
+
+highlight = rgba(lighten(back, 25%), .6 / lum)
+border-light = rgba(#000, lum-light)
+border-med = rgba(#000, lum-med)
+border-dark = rgba(#000, lum-dark)
+
 sel-light = #e5f4fb
-sel = #a8d5fb
-sel-border = darken(sel, 25%)
+sel = #b4d5fe
+
+sel-highlight = rgba(lighten(sel-light, 25%), .6 / lum)
+sel-border-light = desaturate(darken(sel, lum-light * 100), 30%)
+sel-border-med = desaturate(darken(sel, lum-med * 100), 30%)
+sel-border-dark = desaturate(darken(sel, lum-dark * 100), 30%)
+
+button-shadow(shade, back, light, split-light = false)
+  if split-light
+    light = inset 0 1px light, inset 0 -1px lighten(shade, 25%)
+  else
+    light = inset 0 0 0 1px light
+  drop = 0 1px rgba(#000, lum * .1)
+  shade = inset 0 -1.7em 1em -1em shade
+  back = inset 0 999px back
+  box-shadow: light, drop, shade, back
+
+::-moz-focus-inner {
+  border: 0;
+}
+::-moz-selection {
+  background: sel;
+}
+::selection {
+  background: sel;
+}
 
 [type="checkbox"]+i,[type="radio"]+i,input,button {
   box-sizing: border-box;
@@ -34,8 +67,8 @@ sel-border = darken(sel, 25%)
   font-size: inherit;
   background: transparent;
   border: 1px solid;
-  border-color: rgba(#000,lum * .35) rgba(#000,lum * .25) rgba(#000,lum * .25)
-  box-shadow: inset 0 2px 0 -1px darken(text-back, 5%), 0 1px rgba(#fff,.3), inset 0 999px text-back;
+  border-color: border-med border-light border-light;
+  box-shadow: inset 0 2px 0 -1px darken(text-back, 5%), 0 1px rgba(#fff, .3), inset 0 999px text-back;
   padding: 1px 4px 2px;
   border-radius: 3px;
   outline: none;
@@ -43,19 +76,22 @@ sel-border = darken(sel, 25%)
 [type="checkbox"]+i,[type="radio"]+i,[type="submit"],button {
   padding-left: 12px;
   padding-right: 12px;
-  border-color: rgba(#000,lum * .25) rgba(#000,lum * .35) rgba(#000,lum * .45);
-  box-shadow: inset 0 0 0 1px highlight, inset 0 -1.7em 1em -1em darken(back, 10%), 0 1px rgba(#000,lum * .1), inset 0 999px back;
+  border-color: border-light border-med border-dark;
+  button-shadow: darken(back, 10%) back highlight;
 }
 [type="checkbox"]:active+i,[type="radio"]:active+i,[type="submit"]:active,button:active {
-  box-shadow: inset 0 1px rgba(darken(back, 20%),.3), inset 0 -1px rgba(highlight,.3 / lum), inset 0 -1.7em 1em -1em darken(back, 10%), 0 1px rgba(#000,lum * .1), inset 0 999px darken(back, 12%);
+  button-shadow: darken(back, 10%) darken(back, 12%) darken(back, 16%) true;
 }
-input:focus{
-  border-color: sel-border lighten(sel-border, 30%) lighten(sel-border, 30%);
-  box-shadow: inset 0 2px 0 -1px #ebf2f5, inset 0 999px text-back;
+input:focus {
+  border-color: sel-border-med sel-border-light sel-border-light;
 }
 [type="checkbox"]:focus+i,[type="radio"]:focus+i,[type="submit"]:focus,button:focus {
-  border-color: lighten(sel-border, 30%) sel-border darken(sel-border, 30%);
-  box-shadow: inset 0 0 0 1px rgba(#fff,.5), inset 0 -.75em .4em sel, 0 1px rgba(sel,.4), inset 0 999px sel-light;
+  border-color: sel-border-light sel-border-med sel-border-dark;
+  button-shadow: sel sel-light sel-highlight;
+}
+[type="checkbox"]:focus:active+i,[type="radio"]:focus:active+i,[type="submit"]:focus:active,button:focus:active {
+  sel-active-back = desaturate(darken(sel-light, 25%), 30%) / 2 + sel / 2;
+  button-shadow: sel sel-active-back darken(sel-active-back, 7%) true;
 }
 [type="checkbox"],[type="radio"] {
   position: absolute;
@@ -101,8 +137,5 @@ input:focus{
 }
 :checked+i:after {
   content: "";
-}
-::-moz-focus-inner {
-  border: 0;
 }
 
