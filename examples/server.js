@@ -5,8 +5,8 @@ nib = require('nib');
 fs = require('fs');
 util = require('util');
 app = express.createServer(express.static(__dirname + '/public'), express.favicon());
-app.get('/style.css', function(req, res) {
-  return fs.readFile("" + __dirname + "/../src/style.css", 'utf8', function(err, styl) {
+app.get('/:file.css', function(req, res) {
+  return fs.readFile("" + __dirname + "/../src/" + req.params.file + ".css", 'utf8', function(err, styl) {
     if (err) {
       console.error(util.inspect(err));
       return res.send('', {

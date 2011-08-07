@@ -1,0 +1,16 @@
+/* Reset */
+
+html,body,p,h1,ul,li,input,button {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #000;
+  background: #fff;
+}
+body,h1 {
+  font: 13px/1.231 Arial, sans-serif;
+}
+a {
+  color: #01c;
+}

@@ -9,8 +9,8 @@ app = express.createServer(
   express.favicon()
 )
 
-app.get '/style.css', (req, res) ->
-  fs.readFile "#{__dirname}/../src/style.css", 'utf8', (err, styl) ->
+app.get '/:file.css', (req, res) ->
+  fs.readFile "#{__dirname}/../src/#{req.params.file}.css", 'utf8', (err, styl) ->
     if err
       console.error util.inspect err
       return res.send '', 'Content-Type': 'text/css'

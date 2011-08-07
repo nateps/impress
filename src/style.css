@@ -63,7 +63,7 @@ button-shadow(shade, back, light, split-light = false)
 
 [type="checkbox"]+i,[type="radio"]+i,input,button {
   box-sizing: border-box;
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande", "Tahoma";
   font-size: inherit;
   background: transparent;
   border: 1px solid;

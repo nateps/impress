@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<link rel=stylesheet href=/style.css>
+<![if !IE]><link rel=stylesheet href=/style.css><![endif]>
+<!--[if gte IE 9]><link rel=stylesheet href=/style.css><![endif]-->
+<!--[if lt IE 9]><link rel=stylesheet href=/ie8-style.css><![endif]-->
 <style>
   form { padding: 24px }
   form > p { margin-top: 8px }
 </style>
 <form>
-  <p><input value="Some text"> <input type=submit value="Search">
-  <p><label><input type=checkbox checked><i></i> Include option</label>
-  <p><label><input type=checkbox><i></i> Include option</label>
-  <p><label><input name=group0 type=radio><i></i> Include option</label>
-  <p><label><input name=group0 type=radio checked><i></i> Include option</label>
+  <p><input value="Some text"> <input type=submit value="Search"></p>
+  <p><label><input type=checkbox checked><i></i> Include option</label></p>
+  <p><label><input type=checkbox><i></i> Include option</label></p>
+  <p><label><input name=group0 type=radio><i></i> Include option</label></p>
+  <p><label><input name=group0 type=radio checked><i></i> Include option</label></p>
   <p><label><input name=group0 type=radio><i></i> Include option</label></p>
 </form>
 <form style=background:#ccc>
