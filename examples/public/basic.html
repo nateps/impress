@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <link rel=stylesheet href=/style.css>
-
-<input> <input type=submit>
+<style>
+  form { padding: 24px }
+  form > p { margin-top: 8px }
+</style>
+<form>
+  <p><input value="Some text"> <input type=submit value="Search">
+  <p><label><input type=checkbox checked><i></i> Include option</label>
+  <p><label><input type=checkbox><i></i> Include option</label>
+  <p><label><input name=group0 type=radio><i></i> Include option</label>
+  <p><label><input name=group0 type=radio checked><i></i> Include option</label>
+  <p><label><input name=group0 type=radio><i></i> Include option</label>
+</form>
+<form style=background:#ccc>
+  <input> <input type=submit>
+</form>
+<form style=background:#999>
+  <input> <input type=submit>
+</form>
+<form style=background:#000>
+  <input> <input type=submit>
+</form>
 
 <script src=vogue.js></script>
