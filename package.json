@@ -1,0 +1,10 @@
+{ "name": "impress",
+  "description": "Sophisticated form CSS templates",
+  "version": "0.0.0",
+  "main": "examples/server.js",
+  "devDependencies": {
+    "vogue": "*",
+    "stylus": "*",
+    "nib": "*"
+  }
+}
