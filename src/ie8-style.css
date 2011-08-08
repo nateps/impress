@@ -1,6 +1,6 @@
 /* Reset */
 
-html,body,p,h1,ul,li,input,button {
+html,body,p,h1,ul,li {
   margin: 0;
   padding: 0;
 }

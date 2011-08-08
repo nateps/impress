@@ -145,13 +145,19 @@ input:focus {
   position: relative;
   min-width: 100px;
   height: 21px;
-  vertical-align: top;
+  line-height: 21px;
   display: inline-block;
+}
+/* The double wrapping is required, because overflow: hidden messes up the
+baseline of inline-blocks in firefox */
+.select>i {
+  display: inline-block;
+  vertical-align: top;
   overflow: hidden;
 }
 select {
   width: 120%;
-  padding: 1px 2px 2px;
+  padding: 0 2px;
   border: 0;
   color: #000;
   font: 0/normal "Lucida Grande", Tahoma, sans-serif;
@@ -170,7 +176,7 @@ select+i:after {
   content: "";
   position: absolute;
   display: block;
-  top: 8px;
+  bottom: 7px;
   right: 5px;
   border-style: solid;
   border-color: darken(#fff, lum * 60) transparent;
@@ -182,7 +188,7 @@ select:focus+i:after{
 @media (-webkit-min-device-pixel-ratio: 0) {
   select {
     width: auto;
-    padding: 2px 21px 3px 6px;
+    padding: 0 21px 0 6px;
     -webkit-appearance: none;
   }
 }
