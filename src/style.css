@@ -1,27 +1,10 @@
 @import "nib/vendor"
 
-/* Reset */
-
-html,body,p,h1,h2,h3,h4,ul,li,input,button,select {
-  margin: 0;
-  padding: 0;
-}
-body {
-  color: #000;
-  background: #fff;
-}
-body,h1,h2,h3,h4 {
-  font: 13px/normal Arial, sans-serif;
-}
-a {
-  color: #01c;
-}
-
-
-/* Forms */
-
 text-back = #fff
 back = #fff
+
+sel-light = #e5f4fb
+sel = #b4d5fe
 
 lum = 100 / lightness(back)
 lum-light = lum * .25
@@ -32,9 +15,6 @@ highlight = rgba(lighten(back, 25%), .6 / lum)
 border-light = rgba(#000, lum-light)
 border-med = rgba(#000, lum-med)
 border-dark = rgba(#000, lum-dark)
-
-sel-light = #e5f4fb
-sel = #b4d5fe
 
 sel-highlight = rgba(lighten(sel-light, 25%), .6 / lum)
 sel-border-light = desaturate(darken(sel, lum-light * 100), 30%)
@@ -57,28 +37,24 @@ button-shadow(shade, back, light, split-light = false)
 ::-moz-focus-inner {
   border: 0;
 }
-::-moz-selection {
-  background: sel;
-}
-::selection {
-  background: sel;
-}
 
-[type="checkbox"]+i,[type="radio"]+i,input,button,select+i {
-  box-sizing: border-box;
+input,button,select {
+  background: transparent;
   color: #000;
   font: 0/normal "Lucida Grande", Tahoma, sans-serif;
-  font-size: inherit;
-  background: transparent;
+  font-size: inherit; 
+  margin: 0;
+}
+[type="checkbox"]+i,[type="radio"]+i,input,button,select+i {
   border: 1px solid;
   border-color: border-med border-light border-light;
-  box-shadow: inset 0 2px 0 -1px darken(text-back, 5%), 0 1px rgba(#fff, .3), inset 0 999px text-back;
-  padding: 1px 4px 2px;
   border-radius: 3px;
+  box-shadow: inset 0 2px 0 -1px darken(text-back, 5%), 0 1px rgba(#fff, .3), inset 0 999px text-back;
+  box-sizing: border-box;
+  padding: 1px 4px 2px;
 }
 [type="checkbox"]+i,[type="radio"]+i,[type="submit"],button,select+i {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 1px 12px 2px;
   border-color: border-light border-med border-dark;
   button-shadow: darken(back, 10%) back highlight;
 }
@@ -97,99 +73,97 @@ input:focus {
   button-shadow: sel sel-active-back darken(sel-active-back, 7%) true;
 }
 [type="checkbox"],[type="radio"] {
-  position: absolute;
   opacity: 0;
+  position: absolute;
 }
 [type="checkbox"]+i,[type="radio"]+i {
   display: inline-block;
-  position: relative;
-  padding: 0;
-  vertical-align: -1px;
   font-size: 7px;
-  width: 12px;
-  height: 12px;
   margin-right: 2px;
+  padding: 0;
+  position: relative;
+  vertical-align: -1px;
   left: 1px;
+  height: 12px;
+  width: 12px;
 }
 [type="radio"]+i {
-  vertical-align: -2px;
-  font-size: 8px;
-  width: 14px;
-  height: 14px;
-  margin: 0;
-  left: 0;
   border-radius: 12px;
+  font-size: 8px;
+  margin: 0;
+  vertical-align: -2px;
+  left: 0;
+  height: 14px;
+  width: 14px;
 }
 [type="checkbox"]+i:after,[type="radio"]+i:after {
-  width: 11px;
-  height: 11px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAcklEQVQIHWXBIQoCQQAAwAkWDR74D4PNqOAbBLkP+AD7VTFabYLFL2i6J1y2mAzbFmSrIHKw6wylytnJn0bSKswkyVxmqJUcFHaSzlhmKkoWvjaeagzcvO39rEXR0lbUqfQawcNLsJK5CIKjwsjV3UTvA0hhHjtECitsAAAAAElFTkSuQmCC") no-repeat;
   display: block;
   position: absolute;
   top: -3px;
   left: 1px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAcklEQVQIHWXBIQoCQQAAwAkWDR74D4PNqOAbBLkP+AD7VTFabYLFL2i6J1y2mAzbFmSrIHKw6wylytnJn0bSKswkyVxmqJUcFHaSzlhmKkoWvjaeagzcvO39rEXR0lbUqfQawcNLsJK5CIKjwsjV3UTvA0hhHjtECitsAAAAAElFTkSuQmCC") no-repeat;
+  height: 11px;
+  width: 11px;
 }
 [type="radio"]+i:after {
-  width: 4px;
-  height: 4px;
+  background: #000;
   border-radius: 4px;
+  box-shadow: 0 1px highlight;
   top: 4px;
   left: 4px;
-  background: #000;
-  box-shadow: 0 1px highlight;
-}
+  height: 4px;
+  width: 4px;
+ }
 :checked+i:after {
   content: "";
 }
 .select {
-  position: relative;
-  min-width: 100px;
-  height: 21px;
-  line-height: 21px;
   display: inline-block;
+  line-height: 21px;
+  position: relative;
+  height: 21px;
+  min-width: 100px;
 }
 /* The double wrapping is required, because overflow: hidden messes up the
-baseline of inline-blocks in firefox */
+baseline of inline-blocks in Firefox */
 .select>i {
   display: inline-block;
-  vertical-align: top;
   overflow: hidden;
+  vertical-align: top;
 }
 select {
-  width: 120%;
-  padding: 0 2px;
   border: 0;
-  color: #000;
-  font: 0/normal "Lucida Grande", Tahoma, sans-serif;
-  font-size: inherit;
-  background: transparent;
-}
-select+i {
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-}
-select+i:after {
-  content: "";
-  position: absolute;
-  display: block;
-  bottom: 7px;
-  right: 5px;
-  border-style: solid;
-  border-color: darken(#fff, lum * 60) transparent;
-  border-width: 4px 4px 0;
-}
-select:focus+i:after{
-  border-top-color: #000;
+  padding: 0 2px;
+  position: relative;
+  z-index: 1;
+  width: 120%;
 }
 @media (-webkit-min-device-pixel-ratio: 0) {
   select {
-    width: auto;
-    padding: 0 21px 0 6px;
     -webkit-appearance: none;
+    padding: 0 21px 0 6px;
+    width: auto;
   }
+}
+select+i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+/* Draws a downward-pointing triangle */
+select+i:after {
+  border: solid;
+  border-color: darken(#fff, lum * 60) transparent;
+  border-width: 4px 4px 0;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 7px;
+  right: 5px;
+}
+select:focus+i:after {
+  border-top-color: #000;
 }
 
