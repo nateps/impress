@@ -3,16 +3,19 @@
 <!--[if gte IE 9]><link rel=stylesheet href=/style.css><![endif]-->
 <!--[if lt IE 9]><link rel=stylesheet href=/ie8-style.css><![endif]-->
 <style>
-  form { padding: 24px }
-  form > p { margin-top: 8px }
+  form { padding: 24px; }
+  form > p { margin-top: 8px; }
 </style>
+
+<body>
 <form>
-  <p><input value="Some text"> <input type=submit value="Search"></p>
-  <p><label><input type=checkbox checked><i></i> Include option</label></p>
-  <p><label><input type=checkbox><i></i> Include option</label></p>
-  <p><label><input name=group0 type=radio><i></i> Include option</label></p>
-  <p><label><input name=group0 type=radio checked><i></i> Include option</label></p>
-  <p><label><input name=group0 type=radio><i></i> Include option</label></p>
+  <p><input value="Some text"> <input type=submit value="Add"> Plain text
+  <p><label><input type=checkbox checked><i></i> Include option</label>
+  <p><label><input type=checkbox><i></i> Include option</label>
+  <p><label><input name=group0 type=radio><i></i> Include option</label>
+  <p><label><input name=group0 type=radio checked><i></i> Include option</label>
+  <p><label><input name=group0 type=radio><i></i> Include option</label>
+  <p><i class=select><select><option>First item<option>Second item<option>Third item</select><i></i></i> Some text <input value=Stuff></p>
 </form>
 <form style=background:#ccc>
   <input> <input type=submit>
