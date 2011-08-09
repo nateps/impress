@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<title>Impress</title>
+<link rel=stylesheet href=public/reset.css>
+<!--[if gte IE 9]><!--><link rel=stylesheet href=public/form.css><!--<![endif]-->
+
+<style>
+body {
+  margin: 36px;
+  width: 400px;
+}
+a {
+  color: #01c;
+}
+h1 {
+  font: bold 40px/1 Helvetica;
+  margin-bottom: 12px;
+}
+
+form {
+  float:left;
+  display: block;
+  padding: 24px;
+  margin-top: 36px;
+  background: #f0f0f0;
+  background: -webkit-linear-gradient(#eee, #f7f7f7);
+  background: -moz-linear-gradient(#eee, #f7f7f7);
+  background: linear-gradient(#eee, #f7f7f7);
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  border: solid #fff;
+  border-width: 1px 0;
+  -moz-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.15), 0 4px 16px -6px #999;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.15), 0 4px 16px -6px #999;
+  text-shadow: 0 1px #fff;
+}
+h2 {
+  font: bold 26px/1 Helvetica;
+}
+fieldset,
+h2 {
+  padding-bottom: 16px;
+}
+.square-bottom {
+  padding-bottom: 20px;
+}
+fieldset > div,
+#submit {
+  margin-top: 8px;
+}
+fieldset b {
+  font-weight: normal;
+  display: inline-block;
+  width: 130px;
+}
+
+.fit,
+.select,
+table {
+  width: 200px;
+}
+/* Note that select defaults to 120% of the width of .select, but it can also
+manually be set to a width that is at least 17px greater than .select */
+select {
+  width: 220px;
+}
+/* Hacky way to acheive a flex-box style layout */
+.table-wrap {
+  line-height: 21px;
+  display: inline-block;
+}
+table {
+  line-height: normal;
+  position: absolute;
+}
+td > input {
+  width: 100%;
+}
+td > button {
+  margin-left: 8px;
+}
+
+dfn {
+  display: block;
+  margin: 4px 0 0 136px;
+  color: #666;
+}
+.indented,
+#submit {
+  margin-left: 130px;
+}
+.inline-radio {
+  margin-right: 16px;
+}
+#submit {
+  margin-right: 8px;
+  margin-bottom: 4px;
+}
+</style>
+
+<!--[if lt IE 9]>
+<style>
+select {
+  width: 200px
+}
+</style>
+<![endif]-->
+
+<body>
+
+<h1>Impress</h1>
+
+<p>The form below is a demo of Impress, an elegant CSS template for HTML forms. It works in all current browsers, uses no JavaScript, and provides support for all basic form field types. For more information, see the <a href=http://github.com/nateps/impress>Github project</a>.</p>
+
+<form>
+  <h2>Create an account</h2>
+
+  <fieldset class=square-bottom>
+    <div><label><b>First name</b><input value=Parker class=fit></label></div>
+    <div><label><b>Last name</b><input value=Blue class=fit></label></div>
+    <div><label><b>Desired username</b><span class=table-wrap><table>
+      <td><input value=parkerb><td><button>Check</button>
+    </table>&nbsp;</span></label></div>
+  </fieldset>
+
+  <fieldset>
+    <div><label><b>Password</b><input type=password value=password class=fit></label>
+      <dfn>At least 8 characters</dfn>
+    </div>
+    <div><label><b>Password again</b><input type=password value=password class=fit></label></div>
+    <div><label class=indented><input type=checkbox checked><i></i> Stay signed in</label></div>
+  </fieldset>
+
+  <fieldset>
+    <div><label><b>Income</b><i class=select><i><select>
+      <option>Less than $25,000</option>
+      <option>$25,000 - $50,000</option>
+      <option>$50,000 - $100,000</option>
+      <option>$100,000 - $200,000</option>
+      <option>More than $200,000</option>
+    </select><i></i></i></i></label></div>
+    <div><label><b>Gender</b></label><label
+      class=inline-radio><input name=gender value=male type=radio checked><i></i> Male</label><label
+      class=inline-radio><input name=gender value=female type=radio><i></i> Female</label><label
+      class=inline-radio><input name=gender value=other type=radio><i></i> Other</label>
+    </div>
+  </fieldset>
+
+  <input type=submit value="Create account" id=submit><a href=#>Cancel</a>
+</form>
