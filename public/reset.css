@@ -1,4 +1,4 @@
-html,body,p,h1,h2,h3,h4,ul,li,fieldset {
+html,body,p,h1,h2,h3,h4,ul,li,fieldset,table,tr,th,td {
   margin: 0;
   padding: 0;
 }
@@ -6,9 +6,13 @@ body {
   color: #000;
   background: #fff;
 }
-body,h1,h2,h3,h4,dfn {
+body,h1,h2,h3,h4,dfn,th {
   font: 13px/16px Arial, sans-serif;
 }
 fieldset,img {
   border: 0;
+}
+table {
+  border-collapse: collapse;
+	border-spacing: 0;
 }
