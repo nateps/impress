@@ -74,12 +74,6 @@ table {
   position: absolute;
   top: 0;
 }
-td input {
-  width: 100%;
-}
-td button {
-  margin-left: 8px;
-}
 
 dfn {
   display: block;
@@ -124,11 +118,6 @@ select {
 
 <!--[if lt IE 8]>
 <style>
-  button {
-    padding: 0 .25em;
-    width: 0;  /* IE table-cell margin fix */
-    overflow: visible;
-  }
 </style>
 <![endif]-->
 
@@ -145,7 +134,7 @@ select {
     <div><label><b>First name</b><input value=Parker class=fit></label></div>
     <div><label><b>Last name</b><input value=Blue class=fit></label></div>
     <div><label><b>Desired username</b><span class=table-wrap><table>
-      <td width=100%><input value=parkerb><td><button>Check</button>
+      <td style=width=100%;padding-right:8px><input style=width:100% value=parkerb><td><button>Check</button>
     </table>&nbsp;</span></label></div>
   </fieldset>
 
