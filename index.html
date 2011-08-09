@@ -74,6 +74,13 @@ table {
   position: absolute;
   top: 0;
 }
+.flex {
+  width: 100%;
+  padding-right: 8px;
+}
+.flex input {
+  width: 100%;
+}
 
 dfn {
   display: block;
@@ -118,6 +125,8 @@ select {
 
 <!--[if lt IE 8]>
 <style>
+.table-wrap {
+}
 </style>
 <![endif]-->
 
@@ -134,7 +143,7 @@ select {
     <div><label><b>First name</b><input value=Parker class=fit></label></div>
     <div><label><b>Last name</b><input value=Blue class=fit></label></div>
     <div><label><b>Desired username</b><span class=table-wrap><table>
-      <td width=100%><input style=width:100% value=parkerb><td style=padding-left:8px><button>Check</button>
+      <td class=flex><input value=parkerb><td><button>Check</button>
     </table>&nbsp;</span></label></div>
   </fieldset>
 
