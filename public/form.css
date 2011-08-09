@@ -5,6 +5,7 @@
   border: 0;
 }
 input,
+textarea,
 button,
 select {
   background: transparent;
@@ -12,10 +13,11 @@ select {
   font: 13px/normal "Lucida Grande", Tahoma, sans-serif;
   margin: 0;
 }
+input,
+textarea,
+button,
 [type="checkbox"]+i,
 [type="radio"]+i,
-input,
-button,
 select+i {
   border: 1px solid;
   border-color: rgba(0,0,0,0.35) rgba(0,0,0,0.25) rgba(0,0,0,0.25);
@@ -30,10 +32,14 @@ select+i {
   box-sizing: border-box;
   padding: 1px 4px 2px;
 }
+textarea {
+  padding-right: 2px;
+  overflow: auto;
+}
+button,
+[type="submit"],
 [type="checkbox"]+i,
 [type="radio"]+i,
-[type="submit"],
-button,
 select+i {
   padding: 1px 12px 2px;
   border-color: rgba(0,0,0,0.25) rgba(0,0,0,0.35) rgba(0,0,0,0.45);
@@ -41,32 +47,33 @@ select+i {
   -moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #fff;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #fff;
 }
+button:active,
+[type="submit"]:active,
 [type="checkbox"]:active+i,
 [type="radio"]:active+i,
-[type="submit"]:active,
-button:active,
 select:active+i {
   -webkit-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
   -moz-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
   box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
 }
-input:focus {
+input:focus,
+textarea:focus {
   border-color: #2976d7 #5492de #5492de;
 }
+button:focus,
+[type="submit"]:focus,
 [type="checkbox"]:focus+i,
 [type="radio"]:focus+i,
-[type="submit"]:focus,
-button:focus,
 select:focus+i {
   border-color: #5492de #2976d7 #215eac;
   -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #e5f4fb;
   -moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #e5f4fb;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #e5f4fb;
 }
+button:focus:active,
+[type="submit"]:focus:active,
 [type="checkbox"]:focus:active+i,
 [type="radio"]:focus:active+i,
-[type="submit"]:focus:active,
-button:focus:active,
 select:focus:active+i {
   -webkit-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
   -moz-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;

@@ -38,13 +38,13 @@ button-shadow(shade, back, light, split-light = false)
   border: 0;
 }
 
-input,button,select {
+input,textarea,button,select {
   background: transparent;
   color: #000;
   font: 13px/normal "Lucida Grande", Tahoma, sans-serif;
   margin: 0;
 }
-[type="checkbox"]+i,[type="radio"]+i,input,button,select+i {
+input,textarea,button,[type="checkbox"]+i,[type="radio"]+i,select+i {
   border: 1px solid;
   border-color: border-med border-light border-light;
   border-radius: 3px;
@@ -52,22 +52,26 @@ input,button,select {
   box-sizing: border-box;
   padding: 1px 4px 2px;
 }
-[type="checkbox"]+i,[type="radio"]+i,[type="submit"],button,select+i {
+textarea {
+  padding-right: 2px;
+  overflow: auto;
+}
+button,[type="submit"],[type="checkbox"]+i,[type="radio"]+i,select+i {
   padding: 1px 12px 2px;
   border-color: border-light border-med border-dark;
   button-shadow: darken(back, 10%) back highlight;
 }
-[type="checkbox"]:active+i,[type="radio"]:active+i,[type="submit"]:active,button:active,select:active+i {
+button:active,[type="submit"]:active,[type="checkbox"]:active+i,[type="radio"]:active+i,select:active+i {
   button-shadow: darken(back, 10%) darken(back, 12%) darken(back, 16%) true;
 }
-input:focus {
+input:focus,textarea:focus {
   border-color: sel-border-med sel-border-light sel-border-light;
 }
-[type="checkbox"]:focus+i,[type="radio"]:focus+i,[type="submit"]:focus,button:focus,select:focus+i {
+button:focus,[type="submit"]:focus,[type="checkbox"]:focus+i,[type="radio"]:focus+i,select:focus+i {
   border-color: sel-border-light sel-border-med sel-border-dark;
   button-shadow: sel sel-light sel-highlight;
 }
-[type="checkbox"]:focus:active+i,[type="radio"]:focus:active+i,[type="submit"]:focus:active,button:focus:active,select:focus:active+i {
+button:focus:active,[type="submit"]:focus:active,[type="checkbox"]:focus:active+i,[type="radio"]:focus:active+i,select:focus:active+i {
   sel-active-back = desaturate(darken(sel-light, 25%), 30%) / 2 + sel / 2;
   button-shadow: sel sel-active-back darken(sel-active-back, 7%) true;
 }
