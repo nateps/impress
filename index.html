@@ -101,8 +101,6 @@ dfn {
 <style>
 input,button,select {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 [type="checkbox"],[type="radio"] {
   vertical-align: -1px;
@@ -119,7 +117,9 @@ select {
 
 <!--[if lt IE 8]>
 <style>
-[type="checkbox"],[type="radio"] {
+.checkbox,
+.inlineradio input {
+  width: 15px;
 }
 </style>
 <![endif]-->
@@ -146,7 +146,7 @@ select {
       <dfn>At least 8 characters</dfn>
     </div>
     <div><label><b>Password again</b><input type=password value=password class=fit></label></div>
-    <div><label class=indented><input type=checkbox checked><i></i> Stay signed in</label></div>
+    <div><label class=indented><input class=checkbox type=checkbox checked><i></i> Stay signed in</label></div>
   </fieldset>
 
   <fieldset>
