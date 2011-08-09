@@ -31,9 +31,6 @@ button-shadow(shade, back, light, split-light = false)
   back = inset 0 999px back
   box-shadow: light, drop, shade, back
 
-:focus {
-  outline: 0;
-}
 ::-moz-focus-inner {
   border: 0;
 }
@@ -43,6 +40,7 @@ input,textarea,button,select {
   color: #000;
   font: 13px/normal "Lucida Grande", Tahoma, sans-serif;
   margin: 0;
+  outline: 0;
 }
 input,textarea,button,[type="checkbox"]+i,[type="radio"]+i,select+i {
   border: 1px solid;
@@ -130,6 +128,7 @@ button:focus:active,[type="submit"]:focus:active,[type="checkbox"]:focus:active+
 /* The double wrapping is required, because overflow: hidden messes up the
 baseline of inline-blocks in Firefox */
 .select>i {
+  width: 100%;
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
