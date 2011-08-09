@@ -50,9 +50,9 @@ button:active,
 [type="checkbox"]:active+i,
 [type="radio"]:active+i,
 select:active+i {
-  -webkit-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
-  -moz-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
-  box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
+  -webkit-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
+  -moz-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
+  box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
 }
 input:focus,
 textarea:focus {
@@ -73,9 +73,9 @@ button:focus:active,
 [type="checkbox"]:focus:active+i,
 [type="radio"]:focus:active+i,
 select:focus:active+i {
-  -webkit-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
-  -moz-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
-  box-shadow: inset 0 1px #8abfe9, inset 0 -1px #fff, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
+  -webkit-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
+  -moz-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
+  box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
 }
 [type="checkbox"],
 [type="radio"] {

@@ -23,7 +23,7 @@ sel-border-dark = desaturate(darken(sel, lum-dark * 100), 30%)
 
 button-shadow(shade, back, light, split-light = false)
   if split-light
-    light = inset 0 1px light, inset 0 -1px lighten(shade, 25%)
+    light = inset 0 1px light, inset 0 -1px lighten(shade, 5%)
   else
     light = inset 0 0 0 1px light
   drop = 0 1px rgba(#000, lum * .1)
