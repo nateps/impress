@@ -1,9 +1,0 @@
-{ "name": "impress",
-  "description": "Sophisticated form CSS templates",
-  "version": "0.0.0",
-  "devDependencies": {
-    "vogue": ">=0.3.1",
-    "stylus": ">=0.13.9",
-    "nib": ">=0.1"
-  }
-}
