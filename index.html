@@ -64,7 +64,7 @@ select {
   width: 220px;
 }
 /* Hacky way to acheive a flex-box style layout */
-.table-wrap {
+.flex-wrap {
   line-height: 21px;
   display: inline-block;
   position: relative;
@@ -113,7 +113,7 @@ input,button,select {
   padding: 0;
   vertical-align: -1px;
 }
-.table-wrap {
+.flex-wrap {
   line-height: 24px;
   margin: -1px 0;
 }
@@ -125,8 +125,11 @@ select {
 
 <!--[if lt IE 8]>
 <style>
+.flex-wrap {
+  width: 207px;
+}
 .flex {
-  padding-right: 20px
+  padding-right: 12px;
 }
 </style>
 <![endif]-->
@@ -143,7 +146,7 @@ select {
   <fieldset class=square-bottom>
     <div><label><b>First name</b><input value=Parker class=fit></label></div>
     <div><label><b>Last name</b><input value=Blue class=fit></label></div>
-    <div><label><b>Desired username</b><span class=table-wrap><table>
+    <div><label><b>Desired username</b><span class=flex-wrap><table>
       <td class=flex><input value=parkerb><td><button>Check</button>
     </table>&nbsp;</span></label></div>
   </fieldset>
