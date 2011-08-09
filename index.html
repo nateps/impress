@@ -108,8 +108,8 @@ input,button,select {
   margin: -1px 0;
   box-sizing: border-box;
 }
-.checkbox,
-.inline-radio input {
+[type="checkbox"],
+[type="radio"] {
   padding: 0;
   vertical-align: -1px;
 }
@@ -131,14 +131,13 @@ table {
   padding-right: 13px;
 }
 .checkbox,
-.inline-radio input {
+.radio {
   height: 15px;
   width: 15px;
   padding: 0;
   vertical-align: 1px;
 }
 #submit a {
-  display: inline-block;
   line-height: 22px;
   vertical-align: top;
 }
@@ -179,9 +178,9 @@ table {
       <option>More than $200,000</option>
     </select><i></i></i></i></label></div>
     <div><label><b>Gender</b></label><label
-      class=inline-radio><input name=gender value=male type=radio checked><i></i> Male</label><label
-      class=inline-radio><input name=gender value=female type=radio><i></i> Female</label><label
-      class=inline-radio><input name=gender value=other type=radio><i></i> Other</label>
+      class=inline-radio><input name=gender value=male class=radio type=radio checked><i></i> Male</label><label
+      class=inline-radio><input name=gender value=female class=radio type=radio><i></i> Female</label><label
+      class=inline-radio><input name=gender value=other class=radio type=radio><i></i> Other</label>
     </div>
   </fieldset>
 
