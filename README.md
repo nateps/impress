@@ -2,6 +2,8 @@
 
   Impress is a set of CSS / [Stylus](http://learnboost.github.com/stylus/) templates. Currently, it provides pure CSS styling for all common HTML form elements including text inputs, buttons, checkboxes, radio buttons, and drop downs. Absolutely no JavaScript is required for full styling of these elements in all current browsers.
 
+  See [the demo](http://nateps.github.com/impress) of an HTML form styled with Impress.
+
 ### Author
 
   [Nate Smith (nateps)](http://github.com/nateps)
