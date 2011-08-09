@@ -104,8 +104,9 @@ dfn {
 input,button,select {
   box-sizing: border-box;
 }
-[type="checkbox"],[type="radio"] {
-  vertical-align: -1px;
+.checkbox,
+.inline-radio input {
+  width: 13px;
 }
 .table-wrap {
   line-height: 24px;
@@ -113,15 +114,6 @@ input,button,select {
 }
 select {
   width: 200px;
-}
-</style>
-<![endif]-->
-
-<!--[if lt IE 8]>
-<style>
-.checkbox,
-.inline-radio input {
-  width: 13px;
 }
 </style>
 <![endif]-->
