@@ -46,9 +46,11 @@ button,
 [type="checkbox"]+i,
 [type="radio"]+i,
 select+i {
+  background: rgba(0,0,0,0.35);
   background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0,0,0,0.25)), to(rgba(0,0,0,0.45)));
-  background: -o-linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
   background: -moz-linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  background: -ms-linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  background: -o-linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
   background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
   -moz-background-origin: border;
   background-origin: border-box;
@@ -173,6 +175,12 @@ select {
   z-index: 1;
   width: 120%;
 }
+@media (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    padding: 0 21px 0 6px;
+    width: auto;
+  }
+}
 :-o-prefocus,
 .select>i {
   float: left;
@@ -186,12 +194,6 @@ select {
 :-o-prefocus,
 select:focus {
   background: transparent;
-}
-@media (-webkit-min-device-pixel-ratio: 0) {
-  select {
-    padding: 0 21px 0 6px;
-    width: auto;
-  }
 }
 select+i {
   position: absolute;
