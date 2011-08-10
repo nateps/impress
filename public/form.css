@@ -5,6 +5,7 @@ input,
 textarea,
 button,
 select {
+  -webkit-appearance: none;
   background: transparent;
   color: #000;
   font: 13px/normal "Lucida Grande", Tahoma, sans-serif;
@@ -17,42 +18,54 @@ button,
 [type="checkbox"]+i,
 [type="radio"]+i,
 select+i {
-  border: 1px solid;
-  border-color: rgba(0,0,0,0.35) rgba(0,0,0,0.25) rgba(0,0,0,0.25);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 2px 0 -1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 999px #fff;
-  -moz-box-shadow: inset 0 2px 0 -1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 999px #fff;
-  box-shadow: inset 0 2px 0 -1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 999px #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 1px 4px 2px;
 }
+input,
+textarea {
+  border: 1px solid;
+  border-color: rgba(0,0,0,0.35) rgba(0,0,0,0.25) rgba(0,0,0,0.25);
+  -webkit-box-shadow: inset 0 1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 200px 1px -100px #fff;
+  -moz-box-shadow: inset 0 1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 200px 1px -100px #fff;
+  box-shadow: inset 0 1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 200px 1px -100px #fff;
+}
 textarea {
   padding-right: 2px;
   overflow: auto;
+  -webkit-box-shadow: inset 0 1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 800px 1px -400px #fff;
+  -moz-box-shadow: inset 0 1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 800px 1px -400px #fff;
+  box-shadow: inset 0 1px #f2f2f2, 0 1px rgba(255,255,255,0.3), inset 0 800px 1px -400px #fff;
 }
 button,
 [type="submit"],
 [type="checkbox"]+i,
 [type="radio"]+i,
 select+i {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0,0,0,0.25)), to(rgba(0,0,0,0.45)));
+  background: -o-linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  background: -moz-linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  -moz-background-origin: border;
+  background-origin: border-box;
+  border: 1px solid transparent;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 200px 1px -100px #fff;
+  -moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 200px 1px -100px #fff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 200px 1px -100px #fff;
   padding: 1px 12px 2px;
-  border-color: rgba(0,0,0,0.25) rgba(0,0,0,0.35) rgba(0,0,0,0.45);
-  -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #fff;
-  -moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #fff;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #fff;
 }
 button:active,
 [type="submit"]:active,
 [type="checkbox"]:active+i,
 [type="radio"]:active+i,
 select:active+i {
-  -webkit-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
-  -moz-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
-  box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 999px #e0e0e0;
+  -webkit-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 200px 1px -100px #e0e0e0;
+  -moz-box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 200px 1px -100px #e0e0e0;
+  box-shadow: inset 0 1px #d6d6d6, inset 0 -1px #f2f2f2, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #e6e6e6, inset 0 200px 1px -100px #e0e0e0;
 }
 input:focus,
 textarea:focus {
@@ -64,18 +77,18 @@ button:focus,
 [type="radio"]:focus+i,
 select:focus+i {
   border-color: #5492de #2976d7 #215eac;
-  -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #e5f4fb;
-  -moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #e5f4fb;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #e5f4fb;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 200px 1px -100px #e5f4fb;
+  -moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 200px 1px -100px #e5f4fb;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 200px 1px -100px #e5f4fb;
 }
 button:focus:active,
 [type="submit"]:focus:active,
 [type="checkbox"]:focus:active+i,
 [type="radio"]:focus:active+i,
 select:focus:active+i {
-  -webkit-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
-  -moz-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
-  box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 999px #a1cced;
+  -webkit-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 200px 1px -100px #a1cced;
+  -moz-box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 200px 1px -100px #a1cced;
+  box-shadow: inset 0 1px #8abfe9, inset 0 -1px #c9e1fe, 0 1px rgba(0,0,0,0.1), inset 0 -1.7em 1em -1em #b4d5fe, inset 0 200px 1px -100px #a1cced;
 }
 [type="checkbox"],
 [type="radio"] {
@@ -96,6 +109,7 @@ select:focus:active+i {
   width: 12px;
 }
 [type="radio"]+i {
+  -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   border-radius: 12px;
@@ -116,8 +130,15 @@ select:focus:active+i {
   height: 11px;
   width: 11px;
 }
+@media (-webkit-min-device-pixel-ratio: 2) {
+  [type="checkbox"]+i:after {
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjExcHgiIGhlaWdodD0iMTJweCI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTksMS40MWMtMC4wMywwLjA0LTAuMDgsMC4wNi0wLjEsMC4xTDMuOTcsOUwxLjk4LDYuODZDMS41NSw2LjQsMC44Myw2LjM3LDAuMzcsNi44Qy0wLjEsNy4yMy0wLjEyLDcuOTYsMC4zMSw4LjQybDIuOTgsMy4yMUMzLjUsMTEuODcsMy44MSwxMiw0LjEyLDEyYzAuMDMsMCwwLjA2LDAsMC4xLDBjMC4zNS0wLjAzLDAuNjctMC4yMiwwLjg2LTAuNTFMOSw1LjUzVjEuNDF6Ii8+PHBhdGggZD0iTTQuMTIsMTFjLTAuMzIsMC0wLjYyLTAuMTMtMC44NC0wLjM3TDAuMzEsNy40MkMtMC4xMiw2Ljk2LTAuMSw2LjI0LDAuMzcsNS44YzAuNDYtMC40MywxLjE5LTAuNCwxLjYyLDAuMDZMMy45Nyw4TDguOSwwLjUyYzAuMzUtMC41MywxLjA2LTAuNjgsMS41OS0wLjMzYzAuNTMsMC4zNSwwLjY3LDEuMDYsMC4zMywxLjU5bC01LjczLDguNzFjLTAuMTksMC4yOS0wLjUxLDAuNDgtMC44NiwwLjUxQzQuMTksMTEsNC4xNiwxMSw0LjEyLDExeiIvPjwvc3ZnPg==") no-repeat;
+    height: 12px;
+  }
+}
 [type="radio"]+i:after {
   background: #000;
+  -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -168,7 +189,6 @@ select:focus {
 }
 @media (-webkit-min-device-pixel-ratio: 0) {
   select {
-    -webkit-appearance: none;
     padding: 0 21px 0 6px;
     width: auto;
   }

@@ -27,8 +27,13 @@ button-shadow(shade, back, light, split-light = false)
   else
     light = inset 0 0 0 1px light
   drop = 0 1px rgba(#000, lum * .1)
+  /* The offsets are tied to the font size so that they can be modified for
+  the different heights of different elements */
   shade = inset 0 -1.7em 1em -1em shade
-  back = inset 0 999px back
+  /* Spread trick to support Mobile Safari and Android Browser. To only support
+  desktop browsers, could simply use a big offset value with no spread.
+  The 1px blur is required to make the Android Browser render the shadow. */
+  back = inset 0 200px 1px -100px back
   box-shadow: light, drop, shade, back
 
 ::-moz-focus-inner {
@@ -36,6 +41,7 @@ button-shadow(shade, back, light, split-light = false)
 }
 
 input,textarea,button,select {
+  -webkit-appearance: none;
   background: transparent;
   color: #000;
   font: 13px/normal "Lucida Grande", Tahoma, sans-serif;
@@ -43,21 +49,34 @@ input,textarea,button,select {
   outline: 0;
 }
 input,textarea,button,[type="checkbox"]+i,[type="radio"]+i,select+i {
-  border: 1px solid;
-  border-color: border-med border-light border-light;
   border-radius: 3px;
-  box-shadow: inset 0 2px 0 -1px darken(text-back, 5%), 0 1px rgba(#fff, .3), inset 0 999px text-back;
   box-sizing: border-box;
   padding: 1px 4px 2px;
+}
+input,textarea {
+  /* Mobile Safari has a strange rendering bug with input elements that messes
+  up the width of the gradient style border on input elements only. Sticking
+  with a normal border works pretty well, though there is a tiny visual artifact
+  in the corners when using transparent border colors. */
+  border: 1px solid;
+  border-color: border-med border-light border-light;
+  box-shadow: inset 0 1px darken(text-back, 5%), 0 1px rgba(#fff, .3), inset 0 200px 1px -100px text-back;
 }
 textarea {
   padding-right: 2px;
   overflow: auto;
+  box-shadow: inset 0 1px darken(text-back, 5%), 0 1px rgba(#fff, .3), inset 0 800px 1px -400px text-back;
 }
 button,[type="submit"],[type="checkbox"]+i,[type="radio"]+i,select+i {
-  padding: 1px 12px 2px;
-  border-color: border-light border-med border-dark;
+  background: -webkit-gradient(linear,0 0,0 100%,from(border-light),to(border-dark));
+  background: -o-linear-gradient(border-light, border-dark);
+  background: -moz-linear-gradient(border-light, border-dark);
+  background: linear-gradient(border-light, border-dark);
+  -moz-background-origin: border;
+  background-origin: border-box;
+  border: 1px solid transparent;
   button-shadow: darken(back, 10%) back highlight;
+  padding: 1px 12px 2px;
 }
 button:active,[type="submit"]:active,[type="checkbox"]:active+i,[type="radio"]:active+i,select:active+i {
   button-shadow: darken(back, 10%) darken(back, 12%) darken(back, 16%) true;
@@ -89,6 +108,7 @@ button:focus:active,[type="submit"]:focus:active,[type="checkbox"]:focus:active+
   width: 12px;
 }
 [type="radio"]+i {
+  -moz-border-radius: 12px;
   border-radius: 12px;
   font-size: 8px;
   margin: 0;
@@ -106,8 +126,15 @@ button:focus:active,[type="submit"]:focus:active,[type="checkbox"]:focus:active+
   height: 11px;
   width: 11px;
 }
+@media (-webkit-min-device-pixel-ratio: 2) {
+  [type="checkbox"]+i:after {
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjExcHgiIGhlaWdodD0iMTJweCI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTksMS40MWMtMC4wMywwLjA0LTAuMDgsMC4wNi0wLjEsMC4xTDMuOTcsOUwxLjk4LDYuODZDMS41NSw2LjQsMC44Myw2LjM3LDAuMzcsNi44Qy0wLjEsNy4yMy0wLjEyLDcuOTYsMC4zMSw4LjQybDIuOTgsMy4yMUMzLjUsMTEuODcsMy44MSwxMiw0LjEyLDEyYzAuMDMsMCwwLjA2LDAsMC4xLDBjMC4zNS0wLjAzLDAuNjctMC4yMiwwLjg2LTAuNTFMOSw1LjUzVjEuNDF6Ii8+PHBhdGggZD0iTTQuMTIsMTFjLTAuMzIsMC0wLjYyLTAuMTMtMC44NC0wLjM3TDAuMzEsNy40MkMtMC4xMiw2Ljk2LTAuMSw2LjI0LDAuMzcsNS44YzAuNDYtMC40MywxLjE5LTAuNCwxLjYyLDAuMDZMMy45Nyw4TDguOSwwLjUyYzAuMzUtMC41MywxLjA2LTAuNjgsMS41OS0wLjMzYzAuNTMsMC4zNSwwLjY3LDEuMDYsMC4zMywxLjU5bC01LjczLDguNzFjLTAuMTksMC4yOS0wLjUxLDAuNDgtMC44NiwwLjUxQzQuMTksMTEsNC4xNiwxMSw0LjEyLDExeiIvPjwvc3ZnPg==") no-repeat;
+    height: 12px;
+  }
+}
 [type="radio"]+i:after {
   background: #000;
+  -moz-border-radius: 4px;
   border-radius: 4px;
   box-shadow: 0 1px highlight;
   top: 4px;
@@ -158,7 +185,6 @@ select {
 @media (-webkit-min-device-pixel-ratio: 0) {
   select {
     /* Only WebKit supports fully resetting a select box */
-    -webkit-appearance: none;
     padding: 0 21px 0 6px;
     width: auto;
   }
