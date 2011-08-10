@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <title>Impress</title>
+
+<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+
 <link rel=stylesheet href=public/reset.css>
 <!--[if gte IE 9]><!--><link rel=stylesheet href=public/form.css><!--<![endif]-->
 
@@ -38,6 +41,7 @@ form {
   padding: 24px;
   margin-top: 36px;
   background: #f0f0f0;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#eee), to(#f7f7f7)); 
   background: -webkit-linear-gradient(#eee, #f7f7f7);
   background: -moz-linear-gradient(#eee, #f7f7f7);
   background: -o-linear-gradient(#eee, #f7f7f7);
@@ -46,6 +50,8 @@ form {
   border-radius: 16px;
   border: solid #fff;
   border-width: 1px 0;
+  /* older Safari has issues rendering negative box shadow padding with border radius */
+  -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.15), 0 4px 12px #999;
   -moz-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.15), 0 4px 16px -6px #999;
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.15), 0 4px 16px -6px #999;
   text-shadow: 0 1px #fff;
